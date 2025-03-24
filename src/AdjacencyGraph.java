@@ -53,10 +53,21 @@ public class AdjacencyGraph<E> implements Graph<E> {
         vertices.get(a).connect(vertices.get(b));;
     }
 
+    /**
+     * Connects two vertexes in the graph with an umdirected connection between
+     * a and bb.
+     * @param a the value in the first vertex to connect
+     * @param b the value in the second vertex to connect
+     * @throws NoSuchElementException if no vertex with value a or b exists in
+     * the graph
+     */
     @Override
     public void connectUndirected(E a, E b) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'connectUndirected'");
+        if (!(contains(a) && contains(b))) throw new NoSuchElementException();
+        Vertex<E> vA = vertices.get(a);
+        Vertex<E> vB = vertices.get(b);
+        vA.connect(vB);
+        vB.connect(vA);
     }
 
     @Override
