@@ -7,6 +7,7 @@
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class AdjacencyGraph<E> implements Graph<E> {
     private Map<E, Vertex<E>> vertices = new HashMap<>();
@@ -38,10 +39,18 @@ public class AdjacencyGraph<E> implements Graph<E> {
         return this.vertices.size();
     }
 
+    /**
+     * Connects two vertexes in the graph with a directed connection from a to
+     * b.
+     * @param a the value in the vertex to connect b to
+     * @param b the value in the vertex to connect to a
+     * @throws NoSuchElementException if no vertex with value a or b exists in
+     * the graph
+     */
     @Override
     public void connectDirected(E a, E b) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'connectDirected'");
+        if (!(contains(a) && contains(b))) throw new NoSuchElementException();
+        vertices.get(a).connect(vertices.get(b));;
     }
 
     @Override
