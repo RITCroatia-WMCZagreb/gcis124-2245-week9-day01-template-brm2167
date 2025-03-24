@@ -5,12 +5,15 @@
 @ASSESSME.ANALYZE: YES
 */
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class AdjacencyGraph<E> implements Graph<E> {
+    private Map<E, Vertex<E>> vertices = new HashMap<>();
 
     @Override
     public void add(E value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        Vertex<E> vertex = new Vertex<E>(value);
     }
 
     @Override
