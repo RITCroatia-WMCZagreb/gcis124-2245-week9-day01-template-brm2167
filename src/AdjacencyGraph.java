@@ -29,10 +29,13 @@ public class AdjacencyGraph<E> implements Graph<E> {
         return this.vertices.containsKey(value);
     }
 
+    /**
+     * Gets the size of the graph.
+     * @return the size of the graph
+     */
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return this.vertices.size();
     }
 
     @Override
