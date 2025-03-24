@@ -1,0 +1,10 @@
+/*
+@ASSESSME.USERID: brm2167
+@ASSESSME.AUTHOR: Benjamin R. Metzger
+@ASSESSME.DESCRIPTION: CLASSACTIVITY
+@ASSESSME.ANALYZE: YES
+*/
+
+public interface Graph {
+    
+}
