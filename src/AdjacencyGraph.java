@@ -55,7 +55,7 @@ public class AdjacencyGraph<E> implements Graph<E> {
 
     /**
      * Connects two vertexes in the graph with an umdirected connection between
-     * a and bb.
+     * a and b.
      * @param a the value in the first vertex to connect
      * @param b the value in the second vertex to connect
      * @throws NoSuchElementException if no vertex with value a or b exists in
@@ -70,10 +70,22 @@ public class AdjacencyGraph<E> implements Graph<E> {
         vB.connect(vA);
     }
 
+    /**
+     * Checks if a vertex with the value a is connected to a vertex with the
+     * value b.
+     * @param a the value in the vertex to check if b is connected to
+     * @param b the value in the vertex to check if it is connected to a
+     * @throws NoSuchElementException if no vertex with value a or b exists in
+     * the graph
+     * @returns if a vertex with the value a is connected to a vertex with the
+     * value b
+     */
     @Override
     public boolean connected(E a, E b) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'connected'");
+        if (!(contains(a) && contains(b))) throw new NoSuchElementException();
+        Vertex<E> vA = vertices.get(a);
+        Vertex<E> vB = vertices.get(b);
+        return vA.connected(vB);
     }
     
 }
