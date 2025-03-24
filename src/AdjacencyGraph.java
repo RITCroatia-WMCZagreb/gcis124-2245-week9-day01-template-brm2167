@@ -11,9 +11,13 @@ import java.util.Map;
 public class AdjacencyGraph<E> implements Graph<E> {
     private Map<E, Vertex<E>> vertices = new HashMap<>();
 
+    /**
+     * Creates a new vertex for a value and puts it into the vertices map.
+     * @param value the value to be contained in the vertex
+     */
     @Override
     public void add(E value) {
-        Vertex<E> vertex = new Vertex<E>(value);
+        this.vertices.put(value, new Vertex<E>(value));
     }
 
     @Override
