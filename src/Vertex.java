@@ -20,4 +20,12 @@ public class Vertex<E> {
         this.value = value;
         neighbors = new HashSet<>();
     }
+
+    /**
+     * Gets the value stored in the vertex.
+     * @return the value stored in the vertex
+     */
+    public E getValue() {
+        return this.value;
+    }
 }
