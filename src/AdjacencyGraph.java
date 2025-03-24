@@ -20,10 +20,13 @@ public class AdjacencyGraph<E> implements Graph<E> {
         this.vertices.put(value, new Vertex<E>(value));
     }
 
+    /**
+     * Checks if a value exists in the graph.
+     * @param value the value to check for
+     */
     @Override
     public boolean contains(E value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'contains'");
+        return this.vertices.containsKey(value);
     }
 
     @Override
