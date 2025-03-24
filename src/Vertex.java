@@ -39,6 +39,14 @@ public class Vertex<E> {
     }
 
     /**
+     * Gets the set of neighbors of this vertex.
+     * @return the set of neighbors of this vertex
+     */
+    public Set<Vertex<E>> getNeighbors() {
+        return this.neighbors;
+    }
+
+    /**
      * Gets the value stored in the vertex.
      * @return the value stored in the vertex
      */
