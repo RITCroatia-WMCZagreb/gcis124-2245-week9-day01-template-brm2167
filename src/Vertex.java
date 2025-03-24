@@ -22,6 +22,23 @@ public class Vertex<E> {
     }
 
     /**
+     * Connects this vertex with another.
+     * @param neighbor the vertex to connect this vertex to
+     */
+    public void connect(Vertex<E> neighbor) {
+        this.neighbors.add(neighbor);
+    }
+
+    /**
+     * Checks if this vertex is connected to another.
+     * @param other the vertex to check if this vertex is connected to
+     * @return whether this vertex is connected to the other
+     */
+    public boolean connected(Vertex<E> other) {
+        return this.neighbors.contains(other);
+    }
+
+    /**
      * Gets the value stored in the vertex.
      * @return the value stored in the vertex
      */
