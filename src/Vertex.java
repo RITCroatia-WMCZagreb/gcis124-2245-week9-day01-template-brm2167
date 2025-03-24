@@ -53,4 +53,16 @@ public class Vertex<E> {
     public E getValue() {
         return this.value;
     }
+
+    public static void main(String[] args) {
+        Vertex<String> a = new Vertex<String>("A");
+        Vertex<String> b = new Vertex<String>("B");
+        Vertex<String> c = new Vertex<String>("C");
+
+        a.connect(b);
+        a.connect(c);
+        b.connect(c);
+        c.connect(a);
+        c.connect(b);
+    }
 }
